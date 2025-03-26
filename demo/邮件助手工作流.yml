@@ -1,0 +1,1297 @@
+app:
+  description: 邮件助手
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: 邮件助手工作流
+  use_icon_as_answer_icon: false
+kind: app
+version: 0.1.3
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: false
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        sourceType: start
+        targetType: question-classifier
+      id: 1711511281652-1711512802873
+      source: '1711511281652'
+      sourceHandle: source
+      target: '1711512802873'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: question-classifier
+        targetType: question-classifier
+      id: 1711512802873-1711512837494
+      source: '1711512802873'
+      sourceHandle: '1711512813038'
+      target: '1711512837494'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: question-classifier
+        targetType: llm
+      id: 1711512802873-1711512911454
+      selected: false
+      source: '1711512802873'
+      sourceHandle: '1711512811520'
+      target: '1711512911454'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: question-classifier
+        targetType: llm
+      id: 1711512802873-1711512914870
+      source: '1711512802873'
+      sourceHandle: '1711512812031'
+      target: '1711512914870'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: question-classifier
+        targetType: llm
+      id: 1711512802873-1711512916516
+      source: '1711512802873'
+      sourceHandle: '1711512812510'
+      target: '1711512916516'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: question-classifier
+        targetType: llm
+      id: 1711512837494-1711512924231
+      source: '1711512837494'
+      sourceHandle: '1711512846439'
+      target: '1711512924231'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: question-classifier
+        targetType: llm
+      id: 1711512837494-1711512926020
+      source: '1711512837494'
+      sourceHandle: '1711512847112'
+      target: '1711512926020'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: question-classifier
+        targetType: llm
+      id: 1711512837494-1711512927569
+      source: '1711512837494'
+      sourceHandle: '1711512847641'
+      target: '1711512927569'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: question-classifier
+        targetType: llm
+      id: 1711512837494-1711512929190
+      source: '1711512837494'
+      sourceHandle: '1711512848120'
+      target: '1711512929190'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: question-classifier
+        targetType: llm
+      id: 1711512837494-1711512930700
+      source: '1711512837494'
+      sourceHandle: '1711512848616'
+      target: '1711512930700'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: llm
+        targetType: template-transform
+      id: 1711512911454-1711513015189
+      source: '1711512911454'
+      sourceHandle: source
+      target: '1711513015189'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: llm
+        targetType: template-transform
+      id: 1711512914870-1711513017096
+      source: '1711512914870'
+      sourceHandle: source
+      target: '1711513017096'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: llm
+        targetType: template-transform
+      id: 1711512916516-1711513018759
+      source: '1711512916516'
+      sourceHandle: source
+      target: '1711513018759'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: llm
+        targetType: template-transform
+      id: 1711512924231-1711513020857
+      source: '1711512924231'
+      sourceHandle: source
+      target: '1711513020857'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: llm
+        targetType: template-transform
+      id: 1711512926020-1711513022516
+      source: '1711512926020'
+      sourceHandle: source
+      target: '1711513022516'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: llm
+        targetType: template-transform
+      id: 1711512927569-1711513024315
+      source: '1711512927569'
+      sourceHandle: source
+      target: '1711513024315'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: llm
+        targetType: template-transform
+      id: 1711512929190-1711513025732
+      source: '1711512929190'
+      sourceHandle: source
+      target: '1711513025732'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: llm
+        targetType: template-transform
+      id: 1711512930700-1711513027347
+      source: '1711512930700'
+      sourceHandle: source
+      target: '1711513027347'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: template-transform
+        targetType: end
+      id: 1711513015189-1711513029058
+      source: '1711513015189'
+      sourceHandle: source
+      target: '1711513029058'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: template-transform
+        targetType: end
+      id: 1711513017096-1711513030924
+      source: '1711513017096'
+      sourceHandle: source
+      target: '1711513030924'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: template-transform
+        targetType: end
+      id: 1711513018759-1711513032459
+      source: '1711513018759'
+      sourceHandle: source
+      target: '1711513032459'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: template-transform
+        targetType: end
+      id: 1711513020857-1711513034850
+      source: '1711513020857'
+      sourceHandle: source
+      target: '1711513034850'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: template-transform
+        targetType: end
+      id: 1711513022516-1711513036356
+      source: '1711513022516'
+      sourceHandle: source
+      target: '1711513036356'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: template-transform
+        targetType: end
+      id: 1711513024315-1711513037973
+      source: '1711513024315'
+      sourceHandle: source
+      target: '1711513037973'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: template-transform
+        targetType: end
+      id: 1711513025732-1711513039350
+      source: '1711513025732'
+      sourceHandle: source
+      target: '1711513039350'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: template-transform
+        targetType: end
+      id: 1711513027347-1711513041219
+      source: '1711513027347'
+      sourceHandle: source
+      target: '1711513041219'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: question-classifier
+        targetType: llm
+      id: 1711512802873-1711513940609
+      source: '1711512802873'
+      sourceHandle: '1711513927279'
+      target: '1711513940609'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: llm
+        targetType: template-transform
+      id: 1711513940609-1711513967853
+      source: '1711513940609'
+      sourceHandle: source
+      target: '1711513967853'
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: template-transform
+        targetType: end
+      id: 1711513967853-1711513974643
+      source: '1711513967853'
+      sourceHandle: source
+      target: '1711513974643'
+      targetHandle: target
+      type: custom
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: Start
+        type: start
+        variables:
+        - label: 邮件内容
+          max_length: null
+          options: []
+          required: true
+          type: paragraph
+          variable: Input_Text
+        - label: 你想做什么？（总结、回复、代写、润色）
+          max_length: 48
+          options:
+          - 总结
+          - 回复
+          - 代写
+          - 润色
+          - 检查语法
+          required: true
+          type: select
+          variable: user_request
+        - label: 想要怎么润色？（可选）
+          max_length: 48
+          options:
+          - 提升表达的清晰度
+          - 缩短
+          - 增长
+          - 简化
+          - 以我的语气重写
+          required: false
+          type: select
+          variable: how_polish
+      dragging: false
+      height: 141
+      id: '1711511281652'
+      position:
+        x: 79.5
+        y: 394.5
+      positionAbsolute:
+        x: 79.5
+        y: 394.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        classes:
+        - id: '1711512811520'
+          name: 总结
+        - id: '1711512812031'
+          name: 回复
+        - id: '1711512812510'
+          name: 代写
+        - id: '1711512813038'
+          name: 润色
+        - id: '1711513927279'
+          name: 检查语法
+        desc: 分类用户需求
+        instructions: ''
+        model:
+          completion_params:
+            frequency_penalty: 0
+            max_tokens: 512
+            presence_penalty: 0
+            temperature: 0.7
+            top_p: 1
+          mode: chat
+          name: gpt-3.5-turbo
+          provider: openai
+        query_variable_selector:
+        - '1711511281652'
+        - user_request
+        selected: false
+        title: 问题分类
+        topics: []
+        type: question-classifier
+      dragging: false
+      height: 311
+      id: '1711512802873'
+      position:
+        x: 265.08215097106216
+        y: 779.5760128939855
+      positionAbsolute:
+        x: 265.08215097106216
+        y: 779.5760128939855
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        classes:
+        - id: '1711512846439'
+          name: 提升表达清晰程度
+        - id: '1711512847112'
+          name: 缩短
+        - id: '1711512847641'
+          name: 增长
+        - id: '1711512848120'
+          name: 化简
+        - id: '1711512848616'
+          name: 以我的语气重写
+        desc: 润色
+        instructions: ''
+        model:
+          completion_params:
+            frequency_penalty: 0
+            max_tokens: 512
+            presence_penalty: 0
+            temperature: 0.7
+            top_p: 1
+          mode: chat
+          name: gpt-3.5-turbo
+          provider: openai
+        query_variable_selector:
+        - '1711511281652'
+        - how_polish
+        selected: false
+        title: 问题分类
+        topics: []
+        type: question-classifier
+      dragging: false
+      height: 311
+      id: '1711512837494'
+      position:
+        x: 645.5
+        y: 394.5
+      positionAbsolute:
+        x: 645.5
+        y: 394.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: 总结
+        model:
+          completion_params:
+            frequency_penalty: 0
+            max_tokens: 512
+            presence_penalty: 0
+            temperature: 0.7
+            top_p: 1
+          mode: chat
+          name: gpt-3.5-turbo
+          provider: openai
+        prompt_template:
+        - id: 4b11ff91-8fe3-4f28-b4e3-75d984c3224a
+          role: system
+          text: '<Task> 为我总结这封邮件。 <Email>{{#1711511281652.Input_Text#}}
+
+            <Result>'
+        selected: false
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      dragging: false
+      height: 125
+      id: '1711512911454'
+      position:
+        x: 645.5
+        y: 1177.5
+      positionAbsolute:
+        x: 645.5
+        y: 1177.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: 回复
+        model:
+          completion_params:
+            frequency_penalty: 0
+            max_tokens: 512
+            presence_penalty: 0
+            temperature: 0.7
+            top_p: 1
+          mode: chat
+          name: gpt-3.5-turbo
+          provider: openai
+        prompt_template:
+        - id: bba289de-a0fd-4602-b42e-554d30bb6f4a
+          role: system
+          text: '<任务> 用我的语气为我回复邮件。 <Email>{{#1711511281652.Input_Text#}}
+
+            <邮件>'
+        selected: false
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      dragging: false
+      height: 125
+      id: '1711512914870'
+      position:
+        x: 645.5
+        y: 1338.5
+      positionAbsolute:
+        x: 645.5
+        y: 1338.5
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: 代写邮件
+        model:
+          completion_params:
+            frequency_penalty: 0
+            max_tokens: 512
+            presence_penalty: 0
+            temperature: 0.7
+            top_p: 1
+          mode: chat
+          name: gpt-3.5-turbo
+          provider: openai
+        prompt_template:
+        - role: system
+          text: '<Task> 将我的想法写为电子邮件。<Email>{{#1711511281652.Input_Text#}}
+
+            <Result>'
+        selected: false
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      dragging: false
+      height: 125
+      id: '1711512916516'
+      position:
+        x: 645.5
+        y: 1499.5
+      positionAbsolute:
+        x: 645.5
+        y: 1499.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: 提升表达清晰度
+        model:
+          completion_params:
+            frequency_penalty: 0
+            max_tokens: 512
+            presence_penalty: 0
+            temperature: 0.7
+            top_p: 1
+          mode: chat
+          name: gpt-3.5-turbo
+          provider: openai
+        prompt_template:
+        - id: 35208544-ca00-4564-b11b-2d622bceeb28
+          role: system
+          text: '<Task> 提升这封邮件表达的清晰度。/
+
+            <Email>{{#1711511281652.Input_Text#}}
+
+
+            <Result>'
+        selected: false
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      dragging: false
+      height: 125
+      id: '1711512924231'
+      position:
+        x: 928.5
+        y: 394.5
+      positionAbsolute:
+        x: 928.5
+        y: 394.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: 缩短
+        model:
+          completion_params:
+            frequency_penalty: 0
+            max_tokens: 512
+            presence_penalty: 0
+            temperature: 0.7
+            top_p: 1
+          mode: chat
+          name: gpt-3.5-turbo
+          provider: openai
+        prompt_template:
+        - id: c7a1c85a-379a-46b5-93df-0dfd4335cb05
+          role: system
+          text: '<Task> 将这封邮件缩短 <Email>{{#1711511281652.Input_Text#}}
+
+            <Result>'
+        selected: false
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      dragging: false
+      height: 125
+      id: '1711512926020'
+      position:
+        x: 928.5
+        y: 555.5
+      positionAbsolute:
+        x: 928.5
+        y: 555.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: 增长
+        model:
+          completion_params:
+            frequency_penalty: 0
+            max_tokens: 512
+            presence_penalty: 0
+            temperature: 0.7
+            top_p: 1
+          mode: chat
+          name: gpt-3.5-turbo
+          provider: openai
+        prompt_template:
+        - id: 8d272e4d-2c44-4530-a348-8655d879548a
+          role: system
+          text: '<Task> 将这封邮件写的更长。 <Email>{{#1711511281652.Input_Text#}}
+
+            <Result>'
+        selected: false
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      dragging: false
+      height: 125
+      id: '1711512927569'
+      position:
+        x: 928.5
+        y: 716.5
+      positionAbsolute:
+        x: 928.5
+        y: 716.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: 简化
+        model:
+          completion_params:
+            frequency_penalty: 0
+            max_tokens: 512
+            presence_penalty: 0
+            temperature: 0.7
+            top_p: 1
+          mode: chat
+          name: gpt-3.5-turbo
+          provider: openai
+        prompt_template:
+        - id: befd9f20-5f8e-4528-a4e1-61b46282afaf
+          role: system
+          text: '<Task> 简化这封邮件。 <Email>{{#1711511281652.Input_Text#}}
+
+            <Result>'
+        selected: false
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      dragging: false
+      height: 125
+      id: '1711512929190'
+      position:
+        x: 928.5
+        y: 877.5
+      positionAbsolute:
+        x: 928.5
+        y: 877.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: 以我的语气重写
+        model:
+          completion_params:
+            frequency_penalty: 0
+            max_tokens: 512
+            presence_penalty: 0
+            temperature: 0.7
+            top_p: 1
+          mode: chat
+          name: gpt-3.5-turbo
+          provider: openai
+        prompt_template:
+        - role: system
+          text: '<Task> 把这封邮件用我的语气重写。 <Email>{{#1711511281652.Input_Text#}}
+
+            <Result>'
+        selected: false
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      dragging: false
+      height: 125
+      id: '1711512930700'
+      position:
+        x: 928.5
+        y: 1038.5
+      positionAbsolute:
+        x: 928.5
+        y: 1038.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: '{{ arg1 }}'
+        title: 模板转换
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1711512911454'
+          - text
+          variable: arg1
+      dragging: false
+      height: 53
+      id: '1711513015189'
+      position:
+        x: 928.5
+        y: 1177.5
+      positionAbsolute:
+        x: 928.5
+        y: 1177.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: '{{ arg1 }}'
+        title: 模板转换 2
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1711512914870'
+          - text
+          variable: arg1
+      dragging: false
+      height: 53
+      id: '1711513017096'
+      position:
+        x: 928.5
+        y: 1338.5
+      positionAbsolute:
+        x: 928.5
+        y: 1338.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: '{{ arg1 }}'
+        title: 模板转换 3
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1711512916516'
+          - text
+          variable: arg1
+      dragging: false
+      height: 53
+      id: '1711513018759'
+      position:
+        x: 928.5
+        y: 1499.5
+      positionAbsolute:
+        x: 928.5
+        y: 1499.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: '{{ arg1 }}'
+        title: 模板转换 4
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1711512924231'
+          - text
+          variable: arg1
+      dragging: false
+      height: 53
+      id: '1711513020857'
+      position:
+        x: 1211.5
+        y: 394.5
+      positionAbsolute:
+        x: 1211.5
+        y: 394.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: '{{ arg1 }}'
+        title: 模板转换 5
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1711512926020'
+          - text
+          variable: arg1
+      dragging: false
+      height: 53
+      id: '1711513022516'
+      position:
+        x: 1211.5
+        y: 555.5
+      positionAbsolute:
+        x: 1211.5
+        y: 555.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: '{{ arg1 }}'
+        title: 模板转换 6
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1711512927569'
+          - text
+          variable: arg1
+      dragging: false
+      height: 53
+      id: '1711513024315'
+      position:
+        x: 1211.5
+        y: 716.5
+      positionAbsolute:
+        x: 1211.5
+        y: 716.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: '{{ arg1 }}'
+        title: 模板转换 7
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1711512929190'
+          - text
+          variable: arg1
+      dragging: false
+      height: 53
+      id: '1711513025732'
+      position:
+        x: 1211.5
+        y: 877.5
+      positionAbsolute:
+        x: 1211.5
+        y: 877.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: '{{ arg1 }}'
+        title: 模板转换 8
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1711512930700'
+          - text
+          variable: arg1
+      dragging: false
+      height: 53
+      id: '1711513027347'
+      position:
+        x: 1211.5
+        y: 1038.5
+      positionAbsolute:
+        x: 1211.5
+        y: 1038.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1711512911454'
+          - text
+          variable: text
+        selected: false
+        title: 结束
+        type: end
+      dragging: false
+      height: 89
+      id: '1711513029058'
+      position:
+        x: 1211.5
+        y: 1177.5
+      positionAbsolute:
+        x: 1211.5
+        y: 1177.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1711512914870'
+          - text
+          variable: text
+        selected: false
+        title: 结束
+        type: end
+      dragging: false
+      height: 89
+      id: '1711513030924'
+      position:
+        x: 1211.5
+        y: 1338.5
+      positionAbsolute:
+        x: 1211.5
+        y: 1338.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1711512916516'
+          - text
+          variable: text
+        selected: false
+        title: 结束
+        type: end
+      dragging: false
+      height: 89
+      id: '1711513032459'
+      position:
+        x: 1211.5
+        y: 1499.5
+      positionAbsolute:
+        x: 1211.5
+        y: 1499.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1711512924231'
+          - text
+          variable: text
+        selected: false
+        title: 结束
+        type: end
+      dragging: false
+      height: 89
+      id: '1711513034850'
+      position:
+        x: 1494.5
+        y: 394.5
+      positionAbsolute:
+        x: 1494.5
+        y: 394.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1711512926020'
+          - text
+          variable: text
+        selected: false
+        title: 结束
+        type: end
+      dragging: false
+      height: 89
+      id: '1711513036356'
+      position:
+        x: 1494.5
+        y: 555.5
+      positionAbsolute:
+        x: 1494.5
+        y: 555.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1711512927569'
+          - text
+          variable: text
+        selected: false
+        title: 结束
+        type: end
+      dragging: false
+      height: 89
+      id: '1711513037973'
+      position:
+        x: 1494.5
+        y: 716.5
+      positionAbsolute:
+        x: 1494.5
+        y: 716.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1711512929190'
+          - text
+          variable: text
+        selected: false
+        title: 结束
+        type: end
+      dragging: false
+      height: 89
+      id: '1711513039350'
+      position:
+        x: 1494.5
+        y: 877.5
+      positionAbsolute:
+        x: 1494.5
+        y: 877.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1711512930700'
+          - text
+          variable: text
+        selected: false
+        title: 结束
+        type: end
+      dragging: false
+      height: 89
+      id: '1711513041219'
+      position:
+        x: 1494.5
+        y: 1038.5
+      positionAbsolute:
+        x: 1494.5
+        y: 1038.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: 检查语法
+        model:
+          completion_params:
+            frequency_penalty: 0
+            max_tokens: 512
+            presence_penalty: 0
+            temperature: 0.7
+            top_p: 1
+          mode: chat
+          name: gpt-3.5-turbo
+          provider: openai
+        prompt_template:
+        - role: system
+          text: '请帮我检查我邮件中的语法错误，并重写成没有语法错误的样子。<Email>{{#1711511281652.Input_Text#}}
+
+            <Result>'
+        selected: false
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      dragging: false
+      height: 125
+      id: '1711513940609'
+      position:
+        x: 645.5
+        y: 1660.5
+      positionAbsolute:
+        x: 645.5
+        y: 1660.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: '{{ arg1 }}'
+        title: 模板转换 9
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1711513940609'
+          - text
+          variable: arg1
+      height: 53
+      id: '1711513967853'
+      position:
+        x: 928.5
+        y: 1660.5
+      positionAbsolute:
+        x: 928.5
+        y: 1660.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1711513940609'
+          - text
+          variable: text
+        selected: false
+        title: 结束
+        type: end
+      height: 89
+      id: '1711513974643'
+      position:
+        x: 1211.5
+        y: 1660.5
+      positionAbsolute:
+        x: 1211.5
+        y: 1660.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        author: Dify
+        desc: ''
+        height: 155
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Input_Text
+          是输入的邮件内容；","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0},{"children":[],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"user_request
+          是你准备让 LLM 帮你做什么，比如总结、回复和润色等；","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0},{"children":[],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"how_polish
+          是可选填写，只需要在选择润色时填写。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 434
+      height: 155
+      id: '1718993713495'
+      position:
+        x: -76.62522971672912
+        y: 575.4606639200388
+      positionAbsolute:
+        x: -76.62522971672912
+        y: 575.4606639200388
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 434
+    viewport:
+      x: -432.84413885136405
+      y: -276.92287748760054
+      zoom: 0.911301280637145
